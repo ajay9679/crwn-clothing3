@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import './App.css';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Header from './components/header/header.component.js';
 
 import {auth, createUserProfileDocument} from './firebase/firebase.utils.js';
 
-import HomePage from './pages/homepage/homepage.component.js';
+const HomePage = lazy(() => import('./pages/homepage/homepage.component.js'));
 import ShopPage from './pages/shop/shop.component.js';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component.js';
 import CheckoutPage from './pages/checkout/checkout.component.js';
