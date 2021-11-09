@@ -46,6 +46,7 @@ class App extends React.Component{
 		return <div className='App'>
     		<Header />
         	<Switch>
+        		<Suspense fallback={<div>Loading...</div>} >
         		<Route exact path='/' component={HomePage} />
         		<Route path='/shop' component={ShopPage} />
         		<Route exact path='/signin' render={() => this.props.currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />} />
